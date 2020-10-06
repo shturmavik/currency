@@ -1,0 +1,69 @@
+@import "./node_modules/semantic-ui-css/semantic.min";
+
+.currency-form {
+  .ui.dropdown .menu {
+    display: block;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__action {
+    &__selection {
+      width: 105px !important;
+    }
+
+    &__value {
+      display: flex !important;
+      cursor: pointer !important;
+    }
+
+    .item{
+      &_disabled {
+        pointer-events: none;
+        background-color: #efeff1;
+      }
+    }
+
+    button {
+      margin-right: 0 !important;
+    }
+  }
+
+  &__result {
+    $component: &;
+    width: auto !important;
+    flex: 0 0 auto;
+    max-width: 100%;
+
+    &__inner {
+      background-color: #efeff1;
+      position: relative;
+      box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+      padding: 1em 1em;
+      min-width: 190px;
+      margin-left: 1rem;
+
+      #{$component}-total {
+        margin: .5rem auto;
+
+        span {
+          font-size: 1.5rem;
+        }
+      }
+
+      #{$component}-title, #{$component}-change, #{$component}-total {
+        font-size: 0.85rem;
+        font-weight: bold;
+        color: #000;
+        white-space: nowrap;
+      }
+
+      #{$component}-change {
+        color: rgb(0 0 0 / 0.4);
+      }
+    }
+  }
+}
